@@ -219,5 +219,22 @@ Why was training LLMs slow before 2022?
   - **Operating Nature:** Airflow is a full distributed orchestrator designed natively for Linux environments (it requires a background scheduler daemon and a metadata database like PostgreSQL). In production, it runs inside Docker containers or on Linux cloud instances.
 - **How we integrate both in Project Proton:**
   - **MLflow:** Used directly in our training scripts to track training metrics, loss, and checkpoints with a visual web dashboard.
-  - **Pipeline Orchestration:** We will structure our Phase 1 data processing as clean, modular tasks (DAGs) that can be run standalone or orchestrated with Airflow when deploying to our cloud environment.
+
+### Entry 005: Git & GitHub Workflow for LLM Engineering (2026-10-12)
+- **The Core Mental Model (3 Trees of Git):**
+  1. *Working Directory:* The actual files on your hard drive where you write code.
+  2. *Staging Area (Index):* The "prep room" where you stage exact files with `git add`.
+  3. *Repository (Commit History):* Permanent cryptographic snapshots created with `git commit`.
+  4. *Remote (GitHub):* The cloud backup and collaboration hub synced with `git push`.
+- **The Golden Rules for LLM Repositories:**
+  - **Never commit model weights (`.pt`, `.bin`, `.safetensors`, `.gguf`)**: GitHub has a 100MB file limit and is designed for code diffs, not neural weights. Weights belong on Hugging Face.
+  - **Never commit massive raw datasets**: Store raw data locally or stream from Hugging Face Hub / cloud bucket.
+  - **Always protect via `.gitignore`**: Keep `.venv/`, `mlruns/`, `checkpoints/`, and cache out of commits.
+- **Essential Command Cheat Sheet:**
+  - `git status` -> See what changed, what is staged, and what is untracked.
+  - `git diff` -> View exact line-by-line changes before staging.
+  - `git add <file>` or `git add .` -> Stage changes.
+  - `git commit -m "feat/fix: message"` -> Save a permanent snapshot.
+  - `git remote add origin <URL>` -> Link local repo to GitHub.
+  - `git push -u origin main` -> Upload commits to GitHub.
 
