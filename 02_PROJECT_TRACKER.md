@@ -1,9 +1,10 @@
 # Project Proton: Progress Tracker & Execution Dashboard
 
 > **Model Name:** **Proton** (Proton-Micro $\to$ Proton-Mini $\to$ Proton-Instruct)  
-> **Status:** 🟡 Initiated / Ready to Begin Phase 0  
+> **Status:** 🟢 Phase 0 Completed / Ready for Phase 1  
 > **Workspace:** `c:/Users/bommi/Downloads/Proton`  
-> **Last Updated:** 2026-10-11
+> **GitHub Repository:** [AkashBommidi27/Proton-LM](https://github.com/AkashBommidi27/Proton-LM)  
+> **Last Updated:** 2026-10-12
 
 ---
 

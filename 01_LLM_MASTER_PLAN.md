@@ -4,7 +4,8 @@
 > **Model Name:** **Proton** (Variants: *Proton-Micro*, *Proton-Mini*, *Proton-Instruct*)  
 > **Target Audience:** Complete beginner with no prior LLM engineering experience, aiming to understand first principles and build a functional Large Language Model from scratch.  
 > **Workspace:** `c:/Users/bommi/Downloads/Proton`  
-> **Author & Mentorship:** Antigravity AI
+> **GitHub Repository:** [AkashBommidi27/Proton-LM](https://github.com/AkashBommidi27/Proton-LM)  
+> **Author & Mentorship:** Akash Bommidi & Antigravity AI
 
 ---
 
