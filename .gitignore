@@ -1,0 +1,37 @@
+# Python Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# MLflow Database & Artifacts (local runs)
+mlruns/
+mlartifacts/
+mlflow.db
+
+# Large Model Weights & Checkpoints
+# (Weights belong on Hugging Face Hub, not GitHub!)
+checkpoints/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.gguf
+
+# Raw Large Datasets & Shards
+data/
+*.parquet
+*.jsonl
+*.arrow
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
