@@ -1,10 +1,10 @@
 # Project Proton: Progress Tracker & Execution Dashboard
 
 > **Model Name:** **Proton** (Proton-Micro $\to$ Proton-Mini $\to$ Proton-Instruct)  
-> **Status:** 🟢 Phase 0 Completed / Ready for Phase 1  
+> **Status:** 🟡 Phase 1: Data Engineering In Progress  
 > **Workspace:** `c:/Users/bommi/Downloads/Proton`  
 > **GitHub Repository:** [AkashBommidi27/Proton-LM](https://github.com/AkashBommidi27/Proton-LM)  
-> **Last Updated:** 2026-10-12
+> **Last Updated:** 2026-10-20
 
 ---
 
@@ -13,7 +13,7 @@
 | Phase | Description | Estimated Time | Status | Completion % |
 |:---:|---|:---:|:---:|:---:|
 | **Phase 0** | Mathematical & Engineering Foundations | 1 - 2 weeks | 🟢 Completed | 100% |
-| **Phase 1** | Data Engineering: Polymath Mixture (Science, History, Politics, Space, Math, Code) | 1 - 2 weeks | 🟡 Ready to Begin | 0% |
+| **Phase 1** | Data Engineering: Polymath Mixture (Science, History, Politics, Space, Math, Code) | 1 - 2 weeks | 🟡 In Progress | 60% |
 | **Phase 2** | Byte-Pair Encoding (BPE) Tokenizer | 3 - 5 days | ⚪ Not Started | 0% |
 | **Phase 3** | Transformer Architecture from Scratch (RoPE, RMSNorm, SwiGLU, GQA) | 2 - 3 weeks | ⚪ Not Started | 0% |
 | **Phase 4** | Pre-Training Pipeline (Tier 1 Free Colab $\to$ Tier 2 Cloudrift RTX 4090) | 2 - 3 weeks | ⚪ Not Started | 0% |
@@ -48,13 +48,14 @@
 ---
 
 ### Phase 1: Data Engineering & Preprocessing
-- [ ] **1.1 Dataset Sourcing**
-  - [ ] Download raw sample corpus (e.g., TinyStories, Wikipedia excerpt, or FineWeb-Edu sample)
-  - [ ] Understand target token counts (e.g., 50M tokens for toy, 1B tokens for mini)
-- [ ] **1.2 Data Cleaning & Filtering**
-  - [ ] Implement length and whitespace normalization
-  - [ ] Implement language/quality heuristics
-  - [ ] Implement basic deduplication (exact hash / MinHash)
+- [x] **1.1 Dataset Sourcing** *(Completed 2026-10-20)*
+  - [x] Stream multi-domain datasets (FineWeb-Edu sample, TinyStories, GSM8K reasoning)
+  - [x] Script created: [`phase1_data_pipeline.py`](file:///c:/Users/bommi/Downloads/Proton/phase1_data_pipeline.py)
+- [x] **1.2 Data Cleaning & Filtering** *(Completed 2026-10-20)*
+  - [x] Implement length normalization (min 25 words, max 4000 words)
+  - [x] Implement symbol-to-word ratio heuristic to remove garbled noise
+  - [x] Implement exact SHA-256 deduplication
+  - [x] Dataset generated: `data/curated/polymath_curated_sample.jsonl` (5,000 curated documents, ~1.7M words, ~2.25M tokens)
 - [ ] **1.3 Data Packing & Sharding**
   - [ ] Save dataset into memory-mapped raw binary format (`.bin` / uint16 or uint32) for fast zero-copy loading during training
 
