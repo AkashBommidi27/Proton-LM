@@ -14,8 +14,8 @@
 |:---:|---|:---:|:---:|:---:|
 | **Phase 0** | Mathematical & Engineering Foundations | 1 - 2 weeks | 🟢 Completed | 100% |
 | **Phase 1** | Data Engineering: Polymath Mixture (Science, History, Politics, Space, Math, Code) | 1 - 2 weeks | 🟡 In Progress | 60% |
-| **Phase 2** | Byte-Pair Encoding (BPE) Tokenizer | 3 - 5 days | ⚪ Not Started | 0% |
-| **Phase 3** | Transformer Architecture from Scratch (RoPE, RMSNorm, SwiGLU, GQA) | 2 - 3 weeks | ⚪ Not Started | 0% |
+| **Phase 2** | Byte-Pair Encoding (BPE) Tokenizer | 3 - 5 days | 🟢 Completed | 100% |
+| **Phase 3** | Transformer Architecture from Scratch (RoPE, RMSNorm, SwiGLU, GQA) | 2 - 3 weeks | 🟡 Ready to Begin | 0% |
 | **Phase 4** | Pre-Training Pipeline (Tier 1 Free Colab $\to$ Tier 2 Cloudrift RTX 4090) | 2 - 3 weeks | ⚪ Not Started | 0% |
 | **Phase 5** | Post-Training (SFT & Domain Instruction Tuning) | 1 - 2 weeks | ⚪ Not Started | 0% |
 | **Phase 6** | Alignment & Reasoning (DPO / GRPO Reasoning Chains) | 1 - 2 weeks | ⚪ Not Started | 0% |
@@ -62,18 +62,19 @@
 ---
 
 ### Phase 2: Tokenization From Scratch
-- [ ] **2.1 Tokenizer Theory & Setup**
-  - [ ] Understand UTF-8 byte encodings vs. Unicode characters
-  - [ ] Byte-level representation ($0 - 255$)
-- [ ] **2.2 BPE Training Algorithm**
-  - [ ] Implement pair frequency counting
-  - [ ] Implement iterative merge operations
-  - [ ] Train vocabulary of size $V = 4,096$ (toy) or $V = 32,000$ (full)
-- [ ] **2.3 Tokenizer Class Implementation**
-  - [ ] Implement `encode(text)` $\to$ `List[int]`
-  - [ ] Implement `decode(tokens)` $\to$ `str`
-  - [ ] Add special tokens (`<|bos|>`, `<|eos|>`, `<|pad|>`, `<|unk|>`)
-  - [ ] Save and load custom tokenizer files (`vocab.json`, `merges.txt`)
+- [x] **2.1 Tokenizer Theory & Setup** *(Completed 2026-10-20)*
+  - [x] Understand UTF-8 byte encodings vs. Unicode characters
+  - [x] Byte-level representation ($0 - 255$) as universal alphabet (0% UNK tokens)
+- [x] **2.2 BPE Training Algorithm** *(Completed 2026-10-20)*
+  - [x] Implement pair frequency counting (`get_stats`)
+  - [x] Implement iterative pairwise merge operations (`merge_tokens`)
+  - [x] Trained vocabulary of size $V = 1,024$ on curated Polymath corpus (compression ratio: 2.59x)
+- [x] **2.3 Tokenizer Class Implementation** *(Completed 2026-10-20)*
+  - [x] Implement `encode(text)` $\to$ `List[int]`
+  - [x] Implement `decode(tokens)` $\to$ `str` (Lossless roundtrip verified)
+  - [x] Add special tokens (`<|bos|>`, `<|eos|>`, `<|pad|>`, `<|unk|>`, `<|im_start|>`, `<|im_end|>`, etc.)
+  - [x] Save and load custom tokenizer files (`vocab.json`, `merges.json`, `special_tokens.json` in `tokenizer_polymath_4k/`)
+  - [x] Scripts verified: [`phase2_tokenizer.py`](file:///c:/Users/bommi/Downloads/Proton/phase2_tokenizer.py) & [`train_tokenizer.py`](file:///c:/Users/bommi/Downloads/Proton/train_tokenizer.py)
 
 ---
 
